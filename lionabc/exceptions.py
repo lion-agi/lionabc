@@ -4,7 +4,10 @@ from typing import Any
 class LionException(Exception):
     """Base exception for all Lion-specific errors."""
 
-    def __init__(self, message: str = "An error occurred in the Lion framework."):
+    def __init__(
+        self,
+        message: str = "An error occurred in the Lion framework.",
+    ):
         self.message = message
         super().__init__(self.message)
 
