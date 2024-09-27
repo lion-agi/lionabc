@@ -15,7 +15,11 @@ class LionException(Exception):
 class LionValueError(LionException, ValueError):
     """Exception raised for errors in input values or item attributes."""
 
-    def __init__(self, message: str = "Invalid value.", value: Any | None = None):
+    def __init__(
+        self,
+        message: str = "Invalid value.",
+        value: Any | None = None,
+    ):
         self.value = value
         value_info = f" Value: {value}" if value is not None else ""
         super().__init__(f"{message}{value_info}")
@@ -42,7 +46,9 @@ class LionOperationError(LionException):
     """Exception raised for errors during general Lion operations."""
 
     def __init__(
-        self, message: str = "Operation failed.", operation: str | None = None
+        self,
+        message: str = "Operation failed.",
+        operation: str | None = None,
     ):
         self.operation = operation
         op_info = f" Operation: {operation}" if operation else ""
@@ -52,7 +58,11 @@ class LionOperationError(LionException):
 class LionItemError(LionException):
     """Base exception for errors related to framework items."""
 
-    def __init__(self, message: str = "Item error.", item_id: str | None = None):
+    def __init__(
+        self,
+        message: str = "Item error.",
+        item_id: str | None = None,
+    ):
         self.item_id = item_id
         item_info = f" Item ID: {item_id}" if item_id else ""
         super().__init__(f"{message}{item_info}")
@@ -72,7 +82,11 @@ class LionIDError(LionItemError):
 class ItemNotFoundError(LionItemError):
     """Exception raised when an item is not found."""
 
-    def __init__(self, message: str = "Item not found.", item_id: str | None = None):
+    def __init__(
+        self,
+        message: str = "Item not found.",
+        item_id: str | None = None,
+    ):
         super().__init__(message, item_id)
 
 
@@ -80,7 +94,9 @@ class ItemExistsError(LionItemError):
     """Exception raised when an item already exists."""
 
     def __init__(
-        self, message: str = "Item already exists.", item_id: str | None = None
+        self,
+        message: str = "Item already exists.",
+        item_id: str | None = None,
     ):
         super().__init__(message, item_id)
 
@@ -105,7 +121,11 @@ class LionRelationError(LionItemError):
 class LionAccessError(LionException):
     """Exception raised when accessing without proper permissions."""
 
-    def __init__(self, message: str = "Access error.", resource_id: str | None = None):
+    def __init__(
+        self,
+        message: str = "Access error.",
+        resource_id: str | None = None,
+    ):
         self.resource_id = resource_id
         resource_info = f" Resource ID: {resource_id}" if resource_id else ""
         super().__init__(f"{message}{resource_info}")
