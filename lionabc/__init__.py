@@ -15,7 +15,13 @@ from .concept import (
     AbstractSpace,
 )
 from .observation import Action, Condition, Event, EventStatus, Signal
-from .observer import BaseEngine, BaseExecutor, BaseiModel, BaseManager, BaseProcessor
+from .observer import (
+    BaseEngine,
+    BaseExecutor,
+    BaseiModel,
+    BaseManager,
+    BaseProcessor,
+)
 from .record import BaseRecord, ImmutableRecord, MutableRecord
 from .space import Collective, Container, Ordering, Structure
 
