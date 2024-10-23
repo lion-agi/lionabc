@@ -168,18 +168,17 @@ class BaseEngine(AbstractObserver):
         """Asynchronously runs the engine"""
 
 
-# subclass must have access to intelligent models
-class BaseiModel(AbstractObserver):
+class BaseOperator(AbstractObserver):
 
     @abstractmethod
-    async def call(self, *args: Any, **kwargs: Any) -> Any:
-        """Asynchronously calls the model's core functionality."""
+    async def operate(self, *args: Any, **kwargs: Any) -> Any:
+        """Asynchronously operate intelligent models"""
 
 
 __all__ = [
     "BaseManager",
     "BaseExecutor",
     "BaseProcessor",
-    "BaseiModel",
+    "BaseOperator",
     "BaseEngine",
 ]

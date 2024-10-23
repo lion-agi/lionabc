@@ -18,8 +18,8 @@ from .observation import Action, Condition, Event, EventStatus, Signal
 from .observer import (
     BaseEngine,
     BaseExecutor,
-    BaseiModel,
     BaseManager,
+    BaseOperator,
     BaseProcessor,
 )
 from .record import BaseRecord, ImmutableRecord, MutableRecord
@@ -35,7 +35,7 @@ __all__ = [
     "BaseExecutor",
     "BaseManager",
     "BaseProcessor",
-    "BaseiModel",
+    "BaseOperator",
     "Condition",
     "Container",
     "Collective",
