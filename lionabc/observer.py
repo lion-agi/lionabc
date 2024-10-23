@@ -168,9 +168,17 @@ class BaseEngine(AbstractObserver):
         """Asynchronously runs the engine"""
 
 
+class BaseOperator(AbstractObserver):
+
+    @abstractmethod
+    async def operate(self, *args: Any, **kwargs: Any) -> Any:
+        """Asynchronously operate intelligent models"""
+
+
 __all__ = [
     "BaseManager",
     "BaseExecutor",
     "BaseProcessor",
+    "BaseOperator",
     "BaseEngine",
 ]
